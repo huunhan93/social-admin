@@ -5,6 +5,7 @@ import './styles/sb-admin-2.min.css'
 import {BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Login } from './pages/Account';
 import { PrivateRoute } from './components';
+import { Admin } from './pages/Admin';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Router>
         <Switch>
           <PrivateRoute>
-            <Login/>
+            <Admin/>
           </PrivateRoute>
         </Switch>
       </Router>

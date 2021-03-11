@@ -7,6 +7,6 @@ export const PrivateRoute = ({
   ...rest
 }: RouteProps): JSX.Element => {
   return (
-    <Route {...rest} render={() => (false ? children : <Login />)}></Route>
+    <Route {...rest} render={() => (true ? children : <Login />)}></Route>
   );
 };

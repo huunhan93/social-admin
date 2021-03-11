@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export const Admin = () => {
   return (
-    <div>
+    <Fragment>
       {/* Sidebar */}
       <ul
         className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
@@ -935,6 +935,6 @@ export const Admin = () => {
         {/* End of Footer */}
       </div>
       {/* End of Content Wrapper */}
-    </div>
+    </Fragment>
   );
 };
