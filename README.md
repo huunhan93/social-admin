@@ -53,3 +53,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - yarn add redux @types/redux
 - yarn add react-redux @types/react-redux
 - yarn add redux-thunk @types/redux-thunk
+
+- yarn add history @types/history
+- yarn add react-dotenv
