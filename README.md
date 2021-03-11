@@ -56,3 +56,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 - yarn add history @types/history
 - yarn add react-dotenv
+
+- yarn add redux-persist @types/redux-persist
