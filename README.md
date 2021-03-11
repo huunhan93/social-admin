@@ -48,3 +48,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 # yarn add
 - yarn add react-router @types/react-router
 - yarn add react-router-dom @types/react-router-dom
+
+# redux
+- yarn add redux @types/redux
+- yarn add react-redux @types/react-redux
+- yarn add redux-thunk @types/redux-thunk
