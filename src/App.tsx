@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import './styles/sb-admin-2.min.css'
 import {BrowserRouter as Router, Switch } from 'react-router-dom';
-import { Login } from './pages/Account/Login';
-import { PrivateRoute } from './components/PrivateRoute';
+import { Login } from './pages/Account';
+import { PrivateRoute } from './components';
 
 function App() {
   return (
