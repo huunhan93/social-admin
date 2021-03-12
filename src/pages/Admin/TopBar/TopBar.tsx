@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { logout } from '../../../store/account/acctions'
 
 export const TopBar = () => {
     const [isShowProfileMenu, setIsShowProfileMenu] = useState(false)
     const [isShowMessageCenter, setIsShowMessageCenter] = useState(false)
     const [isShowAlertsCenter, setIsShowAlertsCenter] = useState(false)
+    const dispatch = useDispatch();
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
         {/* Sidebar Toggle (Topbar) */}
@@ -307,6 +310,7 @@ export const TopBar = () => {
                 href="#"
                 data-toggle="modal"
                 data-target="#logoutModal"
+                onClick={() => dispatch(logout())}
               >
                 <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                 Logout
