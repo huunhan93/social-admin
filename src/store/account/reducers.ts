@@ -1,4 +1,4 @@
-import { AccountActionTypes, AccountState, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT} from "./types"
+import { AccountActionTypes, AccountState, LOAD_CURRENT_LOGIN_USER_FAILURE, LOAD_CURRENT_LOGIN_USER_REQUEST, LOAD_CURRENT_LOGIN_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT} from "./types"
 
 const initialState: AccountState = {
     user:  null,
@@ -23,6 +23,23 @@ const accountReducer = (
             }
         }
         case LOGIN_FAILURE: {
+            return {
+                ...state,
+                loading: false,
+                token: action.payload.error
+            }
+        }
+        case LOAD_CURRENT_LOGIN_USER_REQUEST: {
+            return {...state, loading: true}
+        }
+        case LOAD_CURRENT_LOGIN_USER_SUCCESS: {
+            return {
+                ...state,
+                loading: false,
+                user: action.payload.user
+            }
+        }
+        case LOAD_CURRENT_LOGIN_USER_FAILURE: {
             return {
                 ...state,
                 loading: false,

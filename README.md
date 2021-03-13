@@ -58,3 +58,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - yarn add react-dotenv
 
 - yarn add redux-persist @types/redux-persist
+
+# Axios
+- yarn add axios 

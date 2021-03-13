@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { history } from "../../helpers";
 import { userService } from "../../services";
-import { AccountActionTypes, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT } from "./types";
+import { AccountActionTypes, LOAD_CURRENT_LOGIN_USER_FAILURE, LOAD_CURRENT_LOGIN_USER_REQUEST, LOAD_CURRENT_LOGIN_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT } from "./types";
 
 export const login = (email: string, password: string, from: string) => {
   return (dispatch: Dispatch<AccountActionTypes>) => {
@@ -32,4 +32,22 @@ export const logout = () : AccountActionTypes => {
     return {type: LOG_OUT}
 }
 
- 
+export const getCurrentLoginUser = () => {
+  return async (dispatch: Dispatch<AccountActionTypes>) => {
+    dispatch({
+      type: LOAD_CURRENT_LOGIN_USER_REQUEST
+    })
+    try{
+      const response = await userService.getCurrentLoginUser();
+      dispatch({
+        type: LOAD_CURRENT_LOGIN_USER_SUCCESS,
+        payload: {user: response}
+      })
+    }catch(error){
+      dispatch({
+        type: LOAD_CURRENT_LOGIN_USER_FAILURE,
+        payload: { error: error.toString()},
+    })
+    }
+  }
+}

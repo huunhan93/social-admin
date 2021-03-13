@@ -3,6 +3,7 @@ import { accountReducer } from "./account/reducers";
 import thunkMiddleware from 'redux-thunk'
 import storage from "redux-persist/lib/storage";
 import { persistReducer , persistStore } from "redux-persist";
+import { setAuthToken } from "../helpers/set-auth-token";
 
 const persistConfig = {
   key: 'root',
@@ -35,6 +36,21 @@ const configureStore = () => {
 
 const store = configureStore();
 const persistedStore = persistStore(store)
+
+let currentState = store.getState() as AppState;
+
+store.subscribe(() => {
+  // keep track of the previous and current state to compare changes
+  let previousState = currentState;
+  currentState = store.getState() as AppState;
+  // if the token changes set the value in localStorage and axios headers
+  if (previousState.account.token !== currentState.account.token) {
+    const token = currentState.account.token;
+    if (token) {
+      setAuthToken(token);
+    }
+  }
+});
 
 export{
   store, persistedStore 

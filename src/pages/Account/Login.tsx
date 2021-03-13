@@ -3,7 +3,7 @@ import { FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { AppState } from "../../store";
-import { login, logout } from "../../store/account/acctions";
+import { login, logout } from "../../store/account/actions";
 
 export const Login = () => {
   const [inputs, setInputs] = useState({
