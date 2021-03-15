@@ -3,7 +3,7 @@ import { accountReducer } from "./account/reducers";
 import thunkMiddleware from 'redux-thunk'
 import storage from "redux-persist/lib/storage";
 import { persistReducer , persistStore } from "redux-persist";
-import { setAuthToken } from "../helpers/set-auth-token";
+import { setAuthToken } from "../helpers";
 
 const persistConfig = {
   key: 'root',
