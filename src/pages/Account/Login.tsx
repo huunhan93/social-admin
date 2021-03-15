@@ -22,7 +22,7 @@ export const Login = () => {
 
   useEffect(() => {
     dispatch(logout());
-  }, []);
+  }, [dispatch]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

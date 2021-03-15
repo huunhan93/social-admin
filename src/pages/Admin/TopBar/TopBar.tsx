@@ -1,4 +1,3 @@
-import { stat } from "node:fs";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../../store";
@@ -46,7 +45,7 @@ export const TopBar = () => {
         <li className="nav-item dropdown no-arrow d-sm-none">
           <a
             className="nav-link dropdown-toggle"
-            href="#"
+            href="/#"
             id="searchDropdown"
             role="button"
             data-toggle="dropdown"
@@ -87,7 +86,7 @@ export const TopBar = () => {
         >
           <a
             className="nav-link dropdown-toggle"
-            href="#"
+            href="/#"
             id="alertsDropdown"
             role="button"
             data-toggle="dropdown"
@@ -108,7 +107,7 @@ export const TopBar = () => {
             aria-labelledby="alertsDropdown"
           >
             <h6 className="dropdown-header">Alerts Center</h6>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="mr-3">
                 <div className="icon-circle bg-primary">
                   <i className="fas fa-file-alt text-white" />
@@ -121,7 +120,7 @@ export const TopBar = () => {
                 </span>
               </div>
             </a>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="mr-3">
                 <div className="icon-circle bg-success">
                   <i className="fas fa-donate text-white" />
@@ -132,7 +131,7 @@ export const TopBar = () => {
                 $290.29 has been deposited into your account!
               </div>
             </a>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="mr-3">
                 <div className="icon-circle bg-warning">
                   <i className="fas fa-exclamation-triangle text-white" />
@@ -146,7 +145,7 @@ export const TopBar = () => {
             </a>
             <a
               className="dropdown-item text-center small text-gray-500"
-              href="#"
+              href="/#"
             >
               Show All Alerts
             </a>
@@ -161,7 +160,7 @@ export const TopBar = () => {
         >
           <a
             className="nav-link dropdown-toggle"
-            href="#"
+            href="/#"
             id="messagesDropdown"
             role="button"
             data-toggle="dropdown"
@@ -182,11 +181,12 @@ export const TopBar = () => {
             aria-labelledby="messagesDropdown"
           >
             <h6 className="dropdown-header">Message Center</h6>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="dropdown-list-image mr-3">
                 <img
                   className="rounded-circle"
                   src="img/undraw_profile_1.svg"
+                  alt=""
                 />
                 <div className="status-indicator bg-success" />
               </div>
@@ -198,11 +198,12 @@ export const TopBar = () => {
                 <div className="small text-gray-500">Emily Fowler · 58m</div>
               </div>
             </a>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="dropdown-list-image mr-3">
                 <img
                   className="rounded-circle"
                   src="img/undraw_profile_2.svg"
+                  alt=""
                 />
                 <div className="status-indicator" />
               </div>
@@ -214,11 +215,12 @@ export const TopBar = () => {
                 <div className="small text-gray-500">Jae Chun · 1d</div>
               </div>
             </a>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="dropdown-list-image mr-3">
                 <img
                   className="rounded-circle"
                   src="img/undraw_profile_3.svg"
+                  alt=""
                 />
                 <div className="status-indicator bg-warning" />
               </div>
@@ -230,11 +232,12 @@ export const TopBar = () => {
                 <div className="small text-gray-500">Morgan Alvarez · 2d</div>
               </div>
             </a>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <a className="dropdown-item d-flex align-items-center" href="/#">
               <div className="dropdown-list-image mr-3">
                 <img
                   className="rounded-circle"
                   src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                  alt=""
                 />
                 <div className="status-indicator bg-success" />
               </div>
@@ -248,7 +251,7 @@ export const TopBar = () => {
             </a>
             <a
               className="dropdown-item text-center small text-gray-500"
-              href="#"
+              href="/#"
             >
               Read More Messages
             </a>
@@ -263,7 +266,7 @@ export const TopBar = () => {
         >
           <a
             className="nav-link dropdown-toggle"
-            href="#"
+            href="/#"
             id="userDropdown"
             role="button"
             data-toggle="dropdown"
@@ -277,6 +280,7 @@ export const TopBar = () => {
             <img
               className="img-profile rounded-circle"
               src={user?.avatar}
+              alt=""
             />
           </a>
           {/* Dropdown - User Information */}
@@ -287,22 +291,22 @@ export const TopBar = () => {
             }
             aria-labelledby="userDropdown"
           >
-            <a className="dropdown-item" href="#">
+            <a className="dropdown-item" href="/#">
               <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400" />
               Profile
             </a>
-            <a className="dropdown-item" href="#">
+            <a className="dropdown-item" href="/#">
               <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400" />
               Settings
             </a>
-            <a className="dropdown-item" href="#">
+            <a className="dropdown-item" href="/#">
               <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400" />
               Activity Log
             </a>
             <div className="dropdown-divider" />
             <a
               className="dropdown-item"
-              href="#"
+              href="/#"
               data-toggle="modal"
               data-target="#logoutModal"
               onClick={() => dispatch(logout())}
