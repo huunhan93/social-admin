@@ -1,6 +1,25 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../../../store";
+import { loadUserPaging } from "../../../store/users/actions";
+import { IUser } from "../../../store/users/types";
 
 export const Users = () => {
+  const users: IUser[] = useSelector((state: AppState) => state.users.items);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadUserPaging(1));
+  }, [dispatch]);
+
+  const userElements: JSX.Element[] = users.map((user) => {
+    return (
+      <tr key={`user_${user._id}`}>
+        <td>{user.first_name}</td>
+        <td>{user.last_name}</td>
+        <td>{user.email}</td>
+      </tr>
+    );
+  });
   return (
     <Fragment>
       <div>
@@ -30,35 +49,12 @@ export const Users = () => {
               >
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Tên</th>
+                    <th>Họ</th>
+                    <th>Email</th>
                   </tr>
                 </thead>
-                <tfoot>
-                  <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                  </tr>
-                  
-                </tbody>
+                <tbody>{userElements}</tbody>
               </table>
             </div>
           </div>
