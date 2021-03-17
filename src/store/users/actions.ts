@@ -7,14 +7,14 @@ import {
   UsersActionTypes,
 } from "./types";
 
-export const loadUserPaging = (currentPage: number) => {
+export const loadUserPaging = (keyword: string, currentPage: number) => {
   return async (dispatch: Dispatch<UsersActionTypes>) => {
     try {
       dispatch({
         type: LOAD_USERS_PAGING_REQUEST,
       });
 
-      const res = await userService.getUsersPaging(currentPage);
+      const res = await userService.getUsersPaging(keyword, currentPage);
 
       dispatch({
         type: LOAD_USERS_PAGING_SUCCESS,

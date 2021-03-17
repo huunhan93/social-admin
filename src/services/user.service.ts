@@ -15,10 +15,10 @@ const getCurrentLoginUser = async (): Promise<any> => {
 }
 
 const getUsersPaging = async(
-    currentPage: number
+    keyword: string, currentPage: number
 ): Promise<IPagination<IUser>> => {
     const res = await api
-        .get<IPagination<IUser>>(`/v1/users/paging/${currentPage}`)
+        .get<IPagination<IUser>>(`/v1/users/paging/${currentPage}?keyword=${keyword}`)
         .then((response) => {
             return response.data
         })
