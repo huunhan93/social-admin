@@ -32,6 +32,7 @@ export interface UsersState {
     items: IUser[],
     page: number;
     total: number;
+    pageSize: number;
     loading: boolean;
     deletedCount: number;
     error: string | null;
